@@ -6,9 +6,15 @@ interface Props {
 }
 
 const { data, slug } = Astro.props.project;
+
+const isSlugPlaceholder = slug.toLowerCase() === 'placeholder';
+
+
+const href = isSlugPlaceholder ? 'https://github.com/RafaKammler' : `https://github.com/RafaKammler/${slug}`;
 ---
 
-<a class="card" href={`/work/${slug}`}>
+
+<a class="card" href={href}>
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 </a>
