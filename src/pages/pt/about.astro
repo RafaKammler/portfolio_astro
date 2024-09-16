@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../../layouts/pt/BaseLayout.astro';
-
 import ContactCTA from '../../components/pt/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="Sobre" description="">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
@@ -17,70 +16,139 @@ import Hero from '../../components/Hero.astro';
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<p>
-					
-					</p>
-					<p>
-
-					</p>
-					<p>
-
-					</p>
+					<p></p>
+					<p></p>
+					<p></p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Educação</h2>
 				<div class="content">
-					<p> Ensino Médio Completo: URI Erechim</p>
-					<p> Ensino Superior em progresso: Ciencias da Computação - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Cursos Realizados</h2>
-				<div class="content">
-					<p>
-					<h5 class="local_curso"> Cursos Udemy: </h5>
-					Python 3 - Curso Completo do Básico ao Avançado -  Duração: 26 Horas<br>
-					SQL para Análise de Dados: Do básico ao avançado - Duração 6 Horas<br>
-					Complete Introduction to Amazon QuickSight - Duração: 5.5 Horas<br>
-					Métodos ágeis de A a Z: o curso completo - Duração 9.5 Horas<br>
-					Linux para Desenvolvedores (c/ terminal, Shell, Apache e +) - Duração: 7.5 Horas<br>
-					Git e GitHub do básico ao avançado (c/ gist e GitHub Pages) - Duração: 8.5 Horas<br>
-					Docker para Desenvolvedors (com Docker Swarm e Kubernetes) - Duração: 12 Horas
-					</p>
-
-					<p>
-						<br>
-					<h5 class="local_curso"> Cursos AWS Skill Builder: </h5>
-					Sales Accreditation (Business)<br>
-					Aspectos econômicos da nuvem<br>
-					Credenciamento (Técnico)<br>
-					Technical Essentials<br>
-					Noções básicas de Analytics na AWS<br>
-					Fundamentos de analytics na AWS<br>
-					Serverless Analytics<br>
-					Introduction to Amazon Athena<br>
-					AWS Glue Getting Started<br>
-					Amazon EMR Getting Started<br>
-					Amazon Redshift Getting Started<br>
-					Best Practices for Data Warehousing with Amazon Redshift<br>
-					Amazon Quicksight Getting Started
-					</p>
+					<p>Ensino Médio Completo: URI Erechim</p>
+					<p>Ensino Superior em progresso: Ciências da Computação - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Habilidades</h2>
 				<div class="content">
-					<p> ETL | Python | Pyspark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02 </p>
+					<p>ETL | Python | Pyspark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02</p>
 				</div>
 			</section>
-		</main>
+			<section>
+				<h2 class="section-title">Cursos Realizados</h2>
+				<div class="content">
+					<h5 class="local_curso">Cursos Udemy:</h5>
+					<p>Python 3 - Curso Completo do Básico ao Avançado - Duração: 26 Horas<br>
+						SQL para Análise de Dados: Do básico ao avançado - Duração 6 Horas<br>
+						Complete Introduction to Amazon QuickSight - Duração: 5.5 Horas<br>
+						Métodos ágeis de A a Z: o curso completo - Duração 9.5 Horas<br>
+						Linux para Desenvolvedores (c/ terminal, Shell, Apache e +) - Duração: 7.5 Horas<br>
+						Git e GitHub do básico ao avançado (c/ gist e GitHub Pages) - Duração: 8.5 Horas<br>
+						Docker para Desenvolvedores (com Docker Swarm e Kubernetes) - Duração: 12 Horas</p>
+					<br>
+					<h5 class="local_curso">Cursos AWS Skill Builder:</h5>
+					<p>Sales Accreditation (Business)<br>
+						Aspectos econômicos da nuvem<br>
+						Credenciamento (Técnico)<br>
+						Technical Essentials<br>
+						Noções básicas de Analytics na AWS<br>
+						Fundamentos de analytics na AWS<br>
+						Serverless Analytics<br>
+						Introduction to Amazon Athena<br>
+						AWS Glue Getting Started<br>
+						Amazon EMR Getting Started<br>
+						Amazon Redshift Getting Started<br>
+						Best Practices for Data Warehousing with Amazon Redshift<br>
+						Amazon Quicksight Getting Started</p>
+				</div>
+			</section>
 
-		<ContactCTA />
-	</div>
+
+			<section>
+				<h2 class="section-title">Certificados</h2>
+				<div class="gallery">
+					<img id="thumb1" class="thumbnail" src="" data-pdf-src="Certificado AWS 1.pdf">
+					<img id="thumb2" class="thumbnail" src="" data-pdf-src="file2.pdf">
+					<!-- Add more thumbnails as needed -->
+				</div>
+			</section>
+
+			<script>
+				const pdfThumbnail = require('pdf-thumbnail');
+
+				async function generateThumbnail(pdfUrl, imgId) {
+					try {
+						const thumbnail = await pdfThumbnail.generate(pdfUrl, {
+							width: 150, // adjust the width to your liking
+							height: 150, // adjust the height to your liking
+						});
+						const img = document.getElementById(imgId);
+						img.src = thumbnail;
+					} catch (err) {
+						console.error(err);
+					}
+				}
+
+				document.addEventListener('DOMContentLoaded', () => {
+					generateThumbnail('Certificado AWS 1.pdf', 'thumb1');
+					generateThumbnail('file2.pdf', 'thumb2');
+					// Add more generate calls as needed
+
+					// Add event listeners to the thumbnails
+					const thumbnails = document.querySelectorAll('.thumbnail');
+					thumbnails.forEach((thumbnail) => {
+						thumbnail.addEventListener('click', (event) => {
+							const pdfSrc = event.target.getAttribute('data-pdf-src');
+							window.open(pdfSrc, '_blank');
+						});
+					});
+				});
+			</script>
 </BaseLayout>
 
 <style>
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.thumbnail {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.modal-content {
+		margin: auto;
+		display: block;
+		max-width: 80%;
+		max-height: 80%;
+	}
+
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 35px;
+		color: #fff;
+		font-size: 40px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -105,11 +173,13 @@ import Hero from '../../components/Hero.astro';
 		font-size: var(--text-xl);
 		color: var(--gray-0);
 	}
+
 	.local_curso {
 		grid-column-start: 1;
 		font-size: 1.3rem;
 		color: var(--gray-0);
 	}
+
 	.content {
 		grid-column: 2 / 4;
 	}
