@@ -63,47 +63,62 @@ import Hero from '../../components/Hero.astro';
 				</div>
 			</section>
 
-
 			<section>
 				<h2 class="section-title">Certificados</h2>
 				<div class="gallery">
-					<img id="thumb1" class="thumbnail" src="" data-pdf-src="Certificado AWS 1.pdf">
-					<img id="thumb2" class="thumbnail" src="" data-pdf-src="file2.pdf">
+					<img id="thumb1" class="thumbnail" src="" onclick="openPDF('/assets/Certificates/Certificado_AWS_1.pdf')">
+					<img id="thumb2" class="thumbnail" src="" onclick="openPDF('/assets/Certificates/Certificado_AWS_2.pdf')">
 					<!-- Add more thumbnails as needed -->
 				</div>
 			</section>
 
-			<script>
-				const pdfThumbnail = require('pdf-thumbnail');
+			<!-- Load PDF.js -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js" defer></script>
 
-				async function generateThumbnail(pdfUrl, imgId) {
-					try {
-						const thumbnail = await pdfThumbnail.generate(pdfUrl, {
-							width: 150, // adjust the width to your liking
-							height: 150, // adjust the height to your liking
-						});
-						const img = document.getElementById(imgId);
-						img.src = thumbnail;
-					} catch (err) {
-						console.error(err);
-					}
-				}
+			<script>
+				// Declare pdfjsLib as a global variable
+				declare var pdfjsLib: any;
+
+				window.openPDF = function(pdfSrc) {
+					window.open(pdfSrc, '_blank');
+				};
 
 				document.addEventListener('DOMContentLoaded', () => {
-					generateThumbnail('Certificado AWS 1.pdf', 'thumb1');
-					generateThumbnail('file2.pdf', 'thumb2');
-					// Add more generate calls as needed
+					pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
 
-					// Add event listeners to the thumbnails
-					const thumbnails = document.querySelectorAll('.thumbnail');
-					thumbnails.forEach((thumbnail) => {
-						thumbnail.addEventListener('click', (event) => {
-							const pdfSrc = event.target.getAttribute('data-pdf-src');
-							window.open(pdfSrc, '_blank');
-						});
-					});
+					async function generateThumbnail(pdfUrl, imgId) {
+						try {
+							const loadingTask = pdfjsLib.getDocument(pdfUrl);
+							const pdf = await loadingTask.promise;
+							const page = await pdf.getPage(1);
+							const scale = 0.2;
+							const viewport = page.getViewport({ scale });
+
+							const canvas = document.createElement('canvas');
+							const context = canvas.getContext('2d');
+							canvas.height = viewport.height;
+							canvas.width = viewport.width;
+
+							const renderContext = {
+								canvasContext: context,
+								viewport: viewport
+							};
+
+							await page.render(renderContext).promise;
+
+							const img = document.getElementById(imgId) as HTMLImageElement;
+							img.src = canvas.toDataURL();
+						} catch (err) {
+							console.error('Error generating thumbnail:', err);
+						}
+					}
+
+					generateThumbnail('/assets/Certificates/Certificado_AWS_1.pdf', 'thumb1');
+					generateThumbnail('/assets/Certificates/Certificado_AWS_2.pdf', 'thumb2');
 				});
 			</script>
+		</main>
+	</div>
 </BaseLayout>
 
 <style>
