@@ -10,7 +10,7 @@ import Hero from '../../components/Hero.astro';
 		<main class="wrapper about">
 			<Hero
 				title="Sobre"
-				tagline="Muito obrigado pela arenção, leia um pouco mais sobre minha história:"
+				tagline="Muito obrigado pela atenção, leia um pouco mais sobre minha história:"
 			>
 			</Hero>
 
@@ -33,13 +33,19 @@ import Hero from '../../components/Hero.astro';
 				<div class="content">
 					<p> Ensino Médio Completo: URI Erechim</p>
 					<p> Ensino Superior em progresso: Ciencias da Computação - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
-					<p></p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Cursos Realizados</h2>
+				<div class="content">
+					<p>	<h5 class="local_curso"> Cursos Udemy: </h5> Python 3 | SQL | Introdução ao Quicksight | Metodologias ágeis | Linux para Desenvolvedores | Git e Github | Docker </p>
+					<p> <h5 class="local_curso"> Cursos AWS Skill Builder: </h5>Sales Accreditation (Business) | Aspectos econômicos da nuvem | Credenciamento (Técnico) | Technical Essentials | Noções básicas de Analytics na AWS | Fundamentos de analytics na AWS | Serverless Analytics | Introduction to Amazon Athena | AWS Glue Getting Started | Amazon EMR Getting Started | Amazon Redshift Getting Started | Best Practices for Data Warehousing with Amazon Redshift | Amazon Quicksight Getting Started</p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Habilidades</h2>
 				<div class="content">
-					<p> ETL | Python | Pyspark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL </p>
+					<p> ETL | Python | Pyspark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02 </p>
 				</div>
 			</section>
 		</main>
@@ -73,7 +79,11 @@ import Hero from '../../components/Hero.astro';
 		font-size: var(--text-xl);
 		color: var(--gray-0);
 	}
-
+	.local_curso {
+		grid-column-start: 1;
+		font-size: 1.3rem;
+		color: var(--gray-0);
+	}
 	.content {
 		grid-column: 2 / 4;
 	}
