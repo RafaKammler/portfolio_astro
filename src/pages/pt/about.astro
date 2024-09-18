@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/pt/BaseLayout.astro';
 import ContactCTA from '../../components/pt/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
+import { GlobalWorkerOptions } from 'pdfjs-dist';
 ---
 
 <BaseLayout title="Sobre" description="">
@@ -94,8 +95,8 @@ import Hero from '../../components/Hero.astro';
 		<!-- Modal for PDF Display -->
 		<div id="pdfModal" class="modal">
 			<div class="modal-content">
-				<span class="close" onclick="closeModal()">&times;</span>
-				<iframe id="pdfViewer" src="" width="100%" height="600px"></iframe>
+				<span id="closeButton" class="close">X</span>
+				<iframe id="pdfViewer" src="" width="80%" height="100%"></iframe>
 			</div>
 		</div>
 
@@ -109,23 +110,24 @@ import Hero from '../../components/Hero.astro';
 			// Add an event listener to each img element
 			imgElements.forEach((img) => {
 				img.addEventListener('click', (event) => {
-					openPDFInModal(event.target.getAttribute('data-pdf-src'));
+					const target = event.target as HTMLImageElement;
+					openPDFInModal(target.getAttribute('data-pdf-src'));
 				});
 			});
 
 			// Function to open the modal with the PDF
 			function openPDFInModal(pdfSrc) {
 				const modal = document.getElementById('pdfModal');
-				const iframe = document.getElementById('pdfViewer');
+				const iframe = document.getElementById('pdfViewer') as HTMLIFrameElement;
 				iframe.src = pdfSrc;
 				modal.style.display = "block";
 			}
 
 			// Function to close the modal
 			function closeModal() {
-				const modal = document.getElementById('pdfModal');
-				modal.style.display = "none";
-			}
+			const modal = document.getElementById('pdfModal');
+			modal.style.display = "none";
+		}
 
 			document.addEventListener('DOMContentLoaded', () => {
 				pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
@@ -135,7 +137,7 @@ import Hero from '../../components/Hero.astro';
 						const loadingTask = pdfjsLib.getDocument(pdfUrl);
 						const pdf = await loadingTask.promise;
 						const page = await pdf.getPage(1);
-						const scale = 0.2;
+						const scale = 1;
 						const viewport = page.getViewport({ scale });
 
 						const canvas = document.createElement('canvas');
@@ -150,12 +152,17 @@ import Hero from '../../components/Hero.astro';
 
 						await page.render(renderContext).promise;
 
-						const img = document.getElementById(imgId);
+						const img = document.getElementById(imgId) as HTMLImageElement;
 						img.src = canvas.toDataURL();
 					} catch (err) {
 						console.error('Error generating thumbnail:', err);
 					}
 				}
+				const closeButton = document.getElementById('closeButton');
+        if (closeButton) {
+            closeButton.addEventListener('click', closeModal);
+        }
+    
 
 				generateThumbnail('/assets/Certificates/Certificado_AWS_1.pdf', 'thumb1');
 				generateThumbnail('/assets/Certificates/Certificado_AWS_2.pdf', 'thumb2');
@@ -184,8 +191,10 @@ import Hero from '../../components/Hero.astro';
 				generateThumbnail('/assets/Certificates/Certificado_AWS_2.pdf', 'thumb25');
 				generateThumbnail('/assets/Certificates/Certificado_AWS_2.pdf', 'thumb26');
 			});
+			
 		</script>
 	</div>
+	
 </BaseLayout>
 
 
@@ -202,14 +211,6 @@ import Hero from '../../components/Hero.astro';
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 
-	.modal-content {
-		position: relative;
-		margin: auto;
-		padding: 20px;
-		width: 80%;
-		background-color: white;
-		border-radius: 8px;
-	}
 
 	.close {
 		position: absolute;
@@ -261,10 +262,12 @@ import Hero from '../../components/Hero.astro';
 	}
 
 	.modal-content {
-		margin: auto;
-		display: block;
-		max-width: 80%;
-		max-height: 80%;
+		height:80%;
+		width:80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	.close {
