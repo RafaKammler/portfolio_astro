@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/pt/BaseLayout.astro';
 import ContactCTA from '../../components/pt/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import { GlobalWorkerOptions } from 'pdfjs-dist';
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout title="Sobre" description="">
@@ -32,7 +33,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 			<section>
 				<h2 class="section-title">Habilidades</h2>
 				<div class="content">
-					<p>ETL | Python | Pyspark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02</p>
+					<p>ETL | Python | PySpark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02</p>
 				</div>
 			</section>
 			<section>
@@ -41,16 +42,16 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 					<h5 class="local_curso">Cursos Udemy:</h5>
 					<p>Complete Introduction to Amazon QuickSight - Duração: 5.5 Horas<br>
 						Docker para Desenvolvedores (com Docker Swarm e Kubernetes) - Duração: 12 Horas<br>
-						Git e GitHub do básico ao avançado (c/ gist e GitHub Pages) - Duração: 8.5 Horas<br>
-						Formação Spark com Pyspark: o Curso Completo - Duração: 11 Horas<br>
-						Linux para Desenvolvedores (c/ terminal, Shell, Apache e +) - Duração: 7.5 Horas<br>
-						Métodos ágeis de A a Z: o curso completo - Duração 9.5 Horas<br>
+						Git e GitHub do básico ao avançado (com gist e GitHub Pages) - Duração: 8.5 Horas<br>
+						Formação Spark com PySpark: o Curso Completo - Duração: 11 Horas<br>
+						Linux para Desenvolvedores (com terminal, Shell, Apache e mais) - Duração: 7.5 Horas<br>
+						Métodos ágeis de A a Z: o curso completo - Duração: 9.5 Horas<br>
 						Python 3 - Curso Completo do Básico ao Avançado - Duração: 26 Horas<br>
-						SQL para Análise de Dados: Do básico ao avançado - Duração 6 Horas</p>
+						SQL para Análise de Dados: Do básico ao avançado - Duração: 6 Horas</p>
 					<br>
 					<h5 class="local_curso">Cursos AWS Skill Builder:</h5>
 					<p>Amazon EMR Getting Started<br>
-						Amazon Quicksight Getting Started<br>
+						Amazon QuickSight Getting Started<br>
 						AWS Glue Getting Started<br>
 						Aspectos econômicos da nuvem<br>
 						Best Practices for Data Warehousing with Amazon Redshift<br>
@@ -65,8 +66,11 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 			</section>
 
 		</main>
+	</div>
 
-		<h2 class="section-title" style="margin-left: 2rem; margin-bottom: -2rem;">Certificados</h2>
+
+
+		<h2 class="section-title" style="margin-left: 2rem; margin-top: 2rem;">Certificados</h2>
 		<div class="gallery">
 			<img id="thumb1" class="thumbnail-special" data-pdf-src="/assets/Certificates/AWS_Certified_Cloud_Practitioner_certificate.pdf" />
 			<img id="thumb26" class="thumbnail-special" data-pdf-src="/assets/Certificates/Rafael_Gustavo_Kammler.pdf" />
@@ -99,7 +103,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 
 		<div id="pdfModal" class="modal">
 			<div class="modal-content">
-				<span id="closeButton" class="close">X</span>
+				<span id="closeButton" class="close"><Icon icon="x-circle"></Icon></span>
 				<iframe id="pdfViewer" src="" width="80%" height="100%"></iframe>
 			</div>
 		</div>
@@ -205,7 +209,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 			});
 			
 		</script>
-	</div>
+
 	
 </BaseLayout>
 
@@ -221,15 +225,6 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 		height: 100%;
 		overflow: auto;
 		background-color: rgba(0, 0, 0, 0.8);
-	}
-
-
-	.close {
-		position: absolute;
-		top: 10px;
-		right: 20px;
-		font-size: 30px;
-		cursor: pointer;
 	}
 
 	.gallery img {
@@ -252,8 +247,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 		flex-wrap: wrap;
 		flex-direction: row;
 		justify-content: flex-start;
-		margin-left: 2rem;
-		margin-right: 2rem;
+		margin: 3rem 2rem;
 		gap: 1.5rem;
 	}
 
@@ -340,12 +334,13 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 
 	.close {
 		position: absolute;
-		top: 20px;
-		right: 35px;
+		top: -10px;
+		right: -33px;
 		color: #fff;
-		font-size: 40px;
 		font-weight: bold;
 		cursor: pointer;
+		background: none;
+		font-size: 2rem;
 	}
 
 	.about {

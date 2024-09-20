@@ -1,16 +1,16 @@
 ---
-import BaseLayout from '../layouts/pt/BaseLayout.astro';
-import ContactCTA from '../components/pt/ContactCTA.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import { GlobalWorkerOptions } from 'pdfjs-dist';
 ---
 
-<BaseLayout title="Sobre" description="">
+<BaseLayout title="About Me" description="">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="Sobre"
-				tagline="Muito obrigado pela atenção, leia um pouco mais sobre minha história:"
+				title="About"
+				tagline="Thank you for your attention, read a bit more about my story:"
 			>
 			</Hero>
 
@@ -23,50 +23,52 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Educação</h2>
+				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>Ensino Médio Completo: URI Erechim</p>
-					<p>Ensino Superior em progresso: Ciências da Computação - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
+					<p>High School Diploma: URI Erechim</p>
+					<p>Bachelor's Degree in progress: Computer Science - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Habilidades</h2>
+				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>ETL | Python | Pyspark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02</p>
+					<p>ETL | Python | PySpark | Pandas | AWS Systems | Docker | Git | GitHub | SQL | Agile Methodologies - Scrum | AWS CLF-C02 Certification</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Cursos Realizados</h2>
+				<h2 class="section-title">Completed Courses</h2>
 				<div class="content">
-					<h5 class="local_curso">Cursos Udemy:</h5>
-					<p>Complete Introduction to Amazon QuickSight - Duração: 5.5 Horas<br>
-						Docker para Desenvolvedores (com Docker Swarm e Kubernetes) - Duração: 12 Horas<br>
-						Git e GitHub do básico ao avançado (c/ gist e GitHub Pages) - Duração: 8.5 Horas<br>
-						Formação Spark com Pyspark: o Curso Completo - Duração: 11 Horas<br>
-						Linux para Desenvolvedores (c/ terminal, Shell, Apache e +) - Duração: 7.5 Horas<br>
-						Métodos ágeis de A a Z: o curso completo - Duração 9.5 Horas<br>
-						Python 3 - Curso Completo do Básico ao Avançado - Duração: 26 Horas<br>
-						SQL para Análise de Dados: Do básico ao avançado - Duração 6 Horas</p>
+					<h5 class="local_curso">Udemy Courses:</h5>
+					<p>Complete Introduction to Amazon QuickSight - Duration: 5.5 Hours<br>
+						Docker for Developers (with Docker Swarm and Kubernetes) - Duration: 12 Hours<br>
+						Git and GitHub from Basic to Advanced (with gist and GitHub Pages) - Duration: 8.5 Hours<br>
+						Spark with PySpark: The Complete Course - Duration: 11 Hours<br>
+						Linux for Developers (with terminal, Shell, Apache, and more) - Duration: 7.5 Hours<br>
+						Agile Methods from A to Z: The Complete Course - Duration: 9.5 Hours<br>
+						Python 3 - Complete Course from Basic to Advanced - Duration: 26 Hours<br>
+						SQL for Data Analysis: From Basic to Advanced - Duration: 6 Hours</p>
 					<br>
-					<h5 class="local_curso">Cursos AWS Skill Builder:</h5>
+					<h5 class="local_curso">AWS Skill Builder Courses:</h5>
 					<p>Amazon EMR Getting Started<br>
-						Amazon Quicksight Getting Started<br>
+						Amazon QuickSight Getting Started<br>
 						AWS Glue Getting Started<br>
-						Aspectos econômicos da nuvem<br>
+						Economics of the Cloud<br>
 						Best Practices for Data Warehousing with Amazon Redshift<br>
-						Credenciamento (Técnico)<br>
-						Fundamentos de analytics na AWS<br>
+						Credentialing (Technical)<br>
+						Analytics Fundamentals on AWS<br>
 						Introduction to Amazon Athena<br>
-						Noções básicas de Analytics na AWS<br>
+						Analytics Basics on AWS<br>
 						Sales Accreditation (Business)<br>
 						Serverless Analytics<br>
 						Technical Essentials</p>
 				</div>
 			</section>
-
 		</main>
+	</div>
 
-		<h2 class="section-title" style="margin-left: 2rem; margin-bottom: -2rem;">Certificados</h2>
+
+
+	<h2 class="section-title" style="margin-left: 2rem; margin-top: 2rem;">Certificates</h2>
 		<div class="gallery">
 			<img id="thumb1" class="thumbnail-special" data-pdf-src="/assets/Certificates/AWS_Certified_Cloud_Practitioner_certificate.pdf" />
 			<img id="thumb26" class="thumbnail-special" data-pdf-src="/assets/Certificates/Rafael_Gustavo_Kammler.pdf" />
@@ -252,8 +254,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 		flex-wrap: wrap;
 		flex-direction: row;
 		justify-content: flex-start;
-		margin-left: 2rem;
-		margin-right: 2rem;
+		margin: 3rem 2rem;
 		gap: 1.5rem;
 	}
 
