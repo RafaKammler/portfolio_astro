@@ -83,6 +83,18 @@ const projects = (await getCollection('work'))
 	</div>
 </BaseLayout>
 
+<script>
+	function ensureTrailingSlash() {
+	let currentPath = window.location.pathname;
+
+	// Ensure the current path ends with a slash
+	if (!currentPath.endsWith('/')) {
+		window.location.pathname = currentPath + '/';
+	}
+}
+
+// Call the function on page load
+ensureTrailingSlash();</script>
 <style>
 	.hero {
 		display: flex;

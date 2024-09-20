@@ -153,12 +153,19 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 	const button = document.getElementById('language-button');
 	button.addEventListener('click', changeLanguage);
+
 	function changeLanguage(event) {
-	  event.preventDefault();
-	  const currentPath = window.location.pathname;
-	  const isEnglish = !currentPath.startsWith('/pt');
-	  const newPath = isEnglish ? `/pt${currentPath}` : currentPath.replace('/pt', '');
-	  window.location.href = newPath;
+		event.preventDefault();
+		let currentPath = window.location.pathname;
+
+		// Ensure the current path ends with a slash
+		if (!currentPath.endsWith('/')) {
+			currentPath += '/';
+		}
+
+		const isEnglish = !currentPath.startsWith('/pt/');
+		const newPath = isEnglish ? `/pt${currentPath}` : currentPath.replace('/pt/', '/');
+		window.location.href = newPath;
 	}
 </script>
 
