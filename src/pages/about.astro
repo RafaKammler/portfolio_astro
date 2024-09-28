@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import { GlobalWorkerOptions } from 'pdfjs-dist';
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout title="About Me" description="">
@@ -10,7 +11,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 		<main class="wrapper about">
 			<Hero
 				title="About"
-				tagline="Thank you for your attention, read a bit more about menpm:"
+				tagline="Thank you for your attention, read a bit more about me:"
 			>
 			</Hero>
 
@@ -99,7 +100,7 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 
 		<div id="pdfModal" class="modal">
 			<div class="modal-content">
-				<span id="closeButton" class="close">X</span>
+				<span id="closeButton" class="close"><Icon icon="x-circle"></Icon></span>
 				<iframe id="pdfViewer" src="" width="80%" height="100%"></iframe>
 			</div>
 		</div>
@@ -223,15 +224,6 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 
-
-	.close {
-		position: absolute;
-		top: 10px;
-		right: 20px;
-		font-size: 30px;
-		cursor: pointer;
-	}
-
 	.gallery img {
 		cursor: pointer;
 		width: 7.5rem;
@@ -339,12 +331,13 @@ import { GlobalWorkerOptions } from 'pdfjs-dist';
 
 	.close {
 		position: absolute;
-		top: 20px;
-		right: 35px;
+		top: -10px;
+		right: -33px;
 		color: #fff;
-		font-size: 40px;
 		font-weight: bold;
 		cursor: pointer;
+		background: none;
+		font-size: 2rem;
 	}
 
 	.about {
