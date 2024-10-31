@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 
-import BaseLayout from '../../layouts/pt/BaseLayout.astro';
+import BaseLayout from '../../layouts/en/BaseLayout.astro';
 
-import ContactCTA from '../../components/pt/ContactCTA.astro';
+import ContactCTA from '../../components/en/ContactCTA.astro';
 import PortfolioPreview from '../../components/PortfolioPreview.astro';
 import Hero from '../../components/Hero.astro';
 import Grid from '../../components/Grid.astro';
@@ -14,14 +14,15 @@ const projects = (await getCollection('work')).sort(
 ---
 
 <BaseLayout
-	title="Meus projetos"
+	title="My Work"
 	description=""
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-			title="Meus Projetos"
-			tagline="A seguir, alguns dos meus projetos recentes para demonstrar meus conhecimentos"			
+			title="My Work"
+			tagline="See some of my projects to get an idea of what I can do."
+		
 				align="start"
 			/>
 			<Grid variant="offset">

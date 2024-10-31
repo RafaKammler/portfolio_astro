@@ -1,78 +1,76 @@
 ---
-import BaseLayout from '../../layouts/pt/BaseLayout.astro';
-import ContactCTA from '../../components/pt/ContactCTA.astro';
+import BaseLayout from '../../layouts/en/BaseLayout.astro';
+import ContactCTA from '../../components/en/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import { GlobalWorkerOptions } from 'pdfjs-dist';
-import Icon from '../../components/Icon.astro';
+import Icon from "../../components/Icon.astro";
 ---
 
-<BaseLayout title="Sobre" description="">
+<BaseLayout title="About Me" description="">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="Sobre"
-				tagline="Muito obrigado pela atenção, leia um pouco mais sobre mim:"
+				title="About"
+				tagline="Thank you for your attention, read a bit more about me:"
 			>
 			</Hero>
 
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<p>Sou um estudante de Ciência da Computação com experiência em Engenharia de Dados, utilizando tecnologias como PySpark, AWS Glue e QuickSight. Recentemente, obtive a certificação AWS Cloud Practitioner, o que fortaleceu meus conhecimentos em soluções de nuvem. Busco oportunidades para aplicar e expandir meus conhecimentos técnicos.</p>
-
+					<p>I am a Computer Science student with experience in Data Engineering, using technologies like PySpark, AWS Glue, and QuickSight. Recently, I obtained the AWS Cloud Practitioner certification, which has strengthened my knowledge of cloud solutions. I am seeking opportunities to apply and expand my technical skills.</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Educação</h2>
+				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>Ensino Médio Completo: URI Erechim</p>
-					<p>Ensino Superior em progresso: Ciências da Computação - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
+					<p>High School Diploma: URI Erechim</p>
+					<p>Bachelor's Degree in progress: Computer Science - Universidade Regional Integrada do Alto Uruguai e das Missões</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Habilidades</h2>
+				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>ETL | Python | PySpark | Pandas | Sistemas AWS | Docker | Git | GitHub | SQL | Metodologias ágeis - Scrum | Certificado AWS CLF-C02</p>
+					<p>ETL | Python | PySpark | Pandas | AWS Systems | Docker | Git | GitHub | SQL | Agile Methodologies - Scrum | AWS CLF-C02 Certification</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Cursos Realizados</h2>
+				<h2 class="section-title">Completed Courses</h2>
 				<div class="content">
-					<h5 class="local_curso">Cursos Udemy:</h5>
-					<p>Complete Introduction to Amazon QuickSight - Duração: 5.5 Horas<br>
-						Docker para Desenvolvedores (com Docker Swarm e Kubernetes) - Duração: 12 Horas<br>
-						Git e GitHub do básico ao avançado (com gist e GitHub Pages) - Duração: 8.5 Horas<br>
-						Formação Spark com PySpark: o Curso Completo - Duração: 11 Horas<br>
-						Linux para Desenvolvedores (com terminal, Shell, Apache e mais) - Duração: 7.5 Horas<br>
-						Métodos ágeis de A a Z: o curso completo - Duração: 9.5 Horas<br>
-						Python 3 - Curso Completo do Básico ao Avançado - Duração: 26 Horas<br>
-						SQL para Análise de Dados: Do básico ao avançado - Duração: 6 Horas</p>
+					<h5 class="local_curso">Udemy Courses:</h5>
+					<p>Complete Introduction to Amazon QuickSight - Duration: 5.5 Hours<br>
+						Docker for Developers (with Docker Swarm and Kubernetes) - Duration: 12 Hours<br>
+						Git and GitHub from Basic to Advanced (with gist and GitHub Pages) - Duration: 8.5 Hours<br>
+						Spark with PySpark: The Complete Course - Duration: 11 Hours<br>
+						Linux for Developers (with terminal, Shell, Apache, and more) - Duration: 7.5 Hours<br>
+						Agile Methods from A to Z: The Complete Course - Duration: 9.5 Hours<br>
+						Python 3 - Complete Course from Basic to Advanced - Duration: 26 Hours<br>
+						SQL for Data Analysis: From Basic to Advanced - Duration: 6 Hours</p>
 					<br>
-					<h5 class="local_curso">Cursos AWS Skill Builder:</h5>
+					<h5 class="local_curso">AWS Skill Builder Courses:</h5>
 					<p>Amazon EMR Getting Started<br>
 						Amazon QuickSight Getting Started<br>
 						AWS Glue Getting Started<br>
-						Aspectos econômicos da nuvem<br>
+						Economics of the Cloud<br>
 						Best Practices for Data Warehousing with Amazon Redshift<br>
-						Credenciamento (Técnico)<br>
-						Fundamentos de analytics na AWS<br>
+						Credentialing (Technical)<br>
+						Analytics Fundamentals on AWS<br>
 						Introduction to Amazon Athena<br>
-						Noções básicas de Analytics na AWS<br>
+						Analytics Basics on AWS<br>
 						Sales Accreditation (Business)<br>
 						Serverless Analytics<br>
 						Technical Essentials</p>
-						<br>
-						<h5 class="local_curso">DIO:</h5>
-						<p>GFT Start #6 - Lógica de Programação - Duração: 47 Horas</p>
+					<br>
+					<h5 class="local_curso">DIO:</h5>
+					<p>GFT Start #6 - Programming logic - duration: 47 Hours</p>
 				</div>
 			</section>
-
 		</main>
 	</div>
 
 
 
-		<h2 class="section-title" style="margin-left: 2rem; margin-top: 2rem;">Certificados</h2>
+	<h2 class="section-title" style="margin-left: 2rem; margin-top: 2rem;">Certificates</h2>
 		<div class="gallery">
 			<img id="thumb1" class="thumbnail-special" data-pdf-src="/assets/Certificates/AWS_Certified_Cloud_Practitioner_certificate.pdf" />
 			<img id="thumb26" class="thumbnail-special" data-pdf-src="/assets/Certificates/Rafael_Gustavo_Kammler.pdf" />
@@ -111,9 +109,9 @@ import Icon from '../../components/Icon.astro';
 			</div>
 		</div>
 
-			<div class="stack" style="width: 100%; margin-top: 1rem;">
-		<ContactCTA />
-    </div>
+		<div class="stack" style="width: 100%; margin-top: 1rem;">
+			<ContactCTA />
+		</div>
 
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js" defer></script>
@@ -210,12 +208,11 @@ import Icon from '../../components/Icon.astro';
 				generateThumbnail('/assets/Certificates/Escola Virtual - Fundação Bradesco - Python Introdutório.pdf', 'thumb24');
 				generateThumbnail('/assets/Certificates/Escola Virtual - Fundação Bradesco - Introdução POO.pdf', 'thumb25');
 				generateThumbnail('/assets/Certificates/Certificado_BootCamp_logica_programacao_DIO.pdf', 'thumb28');
-
 			});
-			
+
 		</script>
 
-	
+
 </BaseLayout>
 
 
@@ -312,7 +309,6 @@ import Icon from '../../components/Icon.astro';
 		box-shadow: 0 0 0.25rem darkred, 0 0 0.5rem darkred, 0 0 0.75rem darkred;
 
 	}
-
 	.thumbnail-dio {
 		width: 7.5rem;
 		align-content: flex-start;
@@ -323,6 +319,7 @@ import Icon from '../../components/Icon.astro';
 		box-shadow: 0 0 0.25rem mediumblue, 0 0 0.5rem mediumblue, 0 0 0.75rem mediumblue;
 
 	}
+
 
 
 	.modal {

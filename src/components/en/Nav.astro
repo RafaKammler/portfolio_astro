@@ -4,10 +4,12 @@ import ThemeToggle from '../ThemeToggle.astro';
 import type { iconPaths } from '../IconPaths';
 
 /** Main menu items */
+
+
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/pt' },
-	{ label: 'Projetos', href: '/pt/work/' },
-	{ label: 'Sobre', href: '/pt/about/' },
+	{ label: 'Home', href: '/en/' },
+	{ label: 'Work', href: '/en/work/' },
+	{ label: 'About', href: '/en/about/' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -20,7 +22,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 <nav>
 	<div class="menu-header">
-		<a href="/pt" class="site-title">
+		<a href="/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			Rafael Gustavo Kammler
 		</a>
@@ -29,33 +31,35 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				<button class="menu-button" aria-expanded="false">
 					<span class="sr-only">Menu</span>
 					<Icon icon="list" />
-					
+
 				</button>
 			</template>
 		</menu-button>
 	</div>
 	<noscript>
-        <ul class="nav-items">
-            {
-                textLinks.map(({ label, href }) => (
-                    <li>
-                        <a
-                            aria-current={Astro.url.pathname === href ? 'true' : 'false'}
-                            class={[
-                                'link',
-                                {
-                                    active: Astro.url.pathname === href,
-                                },
-							].join(' ')}
-							href={href.endsWith('/') ? href : `${href}`}
-                        >
-                            {label}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </noscript>
+		<ul class="nav-items">
+			{
+				textLinks.map(({ label, href }) => (
+					<li>
+						<a
+							aria-current={Astro.url.pathname === href ? 'page' : undefined}
+							class:list={[
+								'link',
+								{
+									active:
+										Astro.url.pathname === href ||
+										(href !== '/' && Astro.url.pathname.startsWith(href)),
+								},
+							]}
+							href={href}
+						>
+							{label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</noscript>
 	<noscript>
 		<div class="menu-footer">
 			<div class="socials">
@@ -81,7 +85,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								'link',
 								{
 									active:
-										Astro.url.pathname === href
+										Astro.url.pathname === href || (href !== '/en/' && Astro.url.pathname.startsWith(href))
+
 								},
 							]}
 							href={href}
@@ -106,11 +111,11 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 			<div class="theme-toggle">
 				<ThemeToggle />
-					<button class="language-button" id="language-button">🇺🇸</button>
+					<button class="language-button" id="language-button">🇧🇷</button>
 			</div>
-			
+
 		</div>
-		
+
 	</div>
 
 </nav>
@@ -153,18 +158,11 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 	const button = document.getElementById('language-button');
 	button.addEventListener('click', changeLanguage);
-
 	function changeLanguage(event) {
 		event.preventDefault();
-		let currentPath = window.location.pathname;
-
-		// Ensure the current path ends with a slash
-		if (!currentPath.endsWith('/')) {
-			currentPath += '/';
-		}
-
-		const isEnglish = !currentPath.startsWith('/pt/');
-		const newPath = isEnglish ? `/pt${currentPath}` : currentPath.replace('/pt/', '/');
+		const currentPath = window.location.pathname;
+		const isEnglish = !currentPath.startsWith('/en');
+		const newPath = isEnglish ? `/en${currentPath}` : currentPath.replace('/en', '');
 		window.location.href = newPath;
 	}
 </script>

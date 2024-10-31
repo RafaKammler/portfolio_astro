@@ -21,8 +21,7 @@ const projects = (await getCollection('work'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+
 ---
 
 <BaseLayout>
@@ -30,18 +29,18 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, I'm Rafael Gustavo Kammler"
-					tagline="I am a Computer Science student who lives in Brazil."
+					title="Olá, sou o Rafael Gustavo Kammler"
+					tagline="Atual estudante de Ciências da Computação, vivendo no Brasil"
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="graduation-cap" size="1.33em" /> Student</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Desenvolvedor</Pill>
+						<Pill><Icon icon="graduation-cap" size="1.33em" /> Estudante</Pill>
 					</div>
 				</Hero>
 
 				<img
-					alt="Me"
+					alt="Rafael Kammler"
 					width="480"
 					height="620"
 					src="/assets/my_photo.jpg"
@@ -54,9 +53,8 @@ const projects = (await getCollection('work'))
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my personal projects. All of them were made for study purposes.</p>
-
+					<h3>Seleção de Projetos</h3>
+					<p>A seguir, alguns dos meus projetos pessoais, todos feitos com o intuito de estudo.</p>					
 				</header>
 
 				<div class="gallery">
@@ -73,7 +71,7 @@ const projects = (await getCollection('work'))
 
 				<div class="cta">
 					<CallToAction href="/work/">
-						View All
+						Ver todos
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
@@ -84,6 +82,18 @@ const projects = (await getCollection('work'))
 	</div>
 </BaseLayout>
 
+<script>
+	function ensureTrailingSlash() {
+	let currentPath = window.location.pathname;
+
+	// Ensure the current path ends with a slash
+	if (!currentPath.endsWith('/')) {
+		window.location.pathname = currentPath + '/';
+	}
+}
+
+// Call the function on page load
+ensureTrailingSlash();</script>
 <style>
 	.hero {
 		display: flex;
