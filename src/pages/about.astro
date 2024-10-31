@@ -60,6 +60,9 @@ import Icon from "../components/Icon.astro";
 						Sales Accreditation (Business)<br>
 						Serverless Analytics<br>
 						Technical Essentials</p>
+					<br>
+					<h5 class="local_curso">DIO:</h5>
+					<p>GFT Start #6 - Programming logic - duration: 47 Hours</p>
 				</div>
 			</section>
 		</main>
@@ -95,6 +98,7 @@ import Icon from "../components/Icon.astro";
 			<img id="thumb23" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_14.pdf" />
 			<img id="thumb24" class="thumbnail-bradesco" data-pdf-src="/assets/Certificates/Escola Virtual - Fundação Bradesco - Python Introdutório.pdf" />
 			<img id="thumb25" class="thumbnail-bradesco" data-pdf-src="/assets/Certificates/Escola Virtual - Fundação Bradesco - Introdução POO.pdf" />
+			<img id="thumb28" class="thumbnail-dio" data-pdf-src="/assets/Certificates/Certificado_BootCamp_logica_programação_DIO.pdf" />
 		</div>
 
 
@@ -203,10 +207,11 @@ import Icon from "../components/Icon.astro";
 				generateThumbnail('/assets/Certificates/Certificado_AWS_14.pdf', 'thumb23');
 				generateThumbnail('/assets/Certificates/Escola Virtual - Fundação Bradesco - Python Introdutório.pdf', 'thumb24');
 				generateThumbnail('/assets/Certificates/Escola Virtual - Fundação Bradesco - Introdução POO.pdf', 'thumb25');
+				generateThumbnail('/assets/Certificates/Certificado_BootCamp_logica_programacao_DIO.pdf', 'thumb28');
 			});
 
 		</script>
-	</div>
+
 
 </BaseLayout>
 
@@ -304,7 +309,16 @@ import Icon from "../components/Icon.astro";
 		box-shadow: 0 0 0.25rem darkred, 0 0 0.5rem darkred, 0 0 0.75rem darkred;
 
 	}
+	.thumbnail-dio {
+		width: 7.5rem;
+		align-content: flex-start;
+		height: 7.5rem;
+		object-fit: cover;
+		cursor: pointer;
+		border: 0.1rem solid mediumblue;
+		box-shadow: 0 0 0.25rem mediumblue, 0 0 0.5rem mediumblue, 0 0 0.75rem mediumblue;
 
+	}
 
 
 
