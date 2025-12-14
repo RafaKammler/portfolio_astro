@@ -1,7 +1,7 @@
 ---
-title: Extensão para criptografia RSA
+title: Analisador de Estatísticas do Spotify
 publishDate: 2020-03-04 00:00:00
-img: /assets/criptografia.jpg
+img: /assets/ProjetoEstatisticasSpotify.png
 img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
 description: |
   We developed a virtual showcase for the softest bedding imaginable.
@@ -10,7 +10,7 @@ tags:
   - Dev
   - Branding
 href:
-  https://github.com/RafaKammler/EXT-Criptografia-RSA-PI2
-featured: true
+  https://github.com/RafaKammler/ProjetoEstatisticasSpotify
+featured: false
 ---
 

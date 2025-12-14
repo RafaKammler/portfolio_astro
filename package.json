@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.2",
+    "astro": "^5.15.5",
     "pdf-thumbnail": "^1.0.6",
-    "pdfjs-dist": "^4.6.82"
+    "pdfjs-dist": "^4.10.38"
   }
 }
