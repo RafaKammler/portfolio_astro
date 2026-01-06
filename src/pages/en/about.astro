@@ -4,160 +4,233 @@ import ContactCTA from '../../components/en/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import { GlobalWorkerOptions } from 'pdfjs-dist';
 import Icon from "../../components/Icon.astro";
+import '../../styles/about.css';
 ---
 
-<BaseLayout title="About Me" description="">
-    <div class="stack gap-20">
-        <main class="wrapper about">
-            <Hero
-                    title="About"
-                    tagline="Thank you very much for your attention, read a little more about me:"
-            >
-            </Hero>
+<BaseLayout title="Sobre" description="">
+	<div class="stack gap-20">
+		<Hero
+			title="About"
+			tagline="Read more about me:">
+		</Hero>
 
-            <section>
-                <h2 class="section-title">Background</h2>
-                <div class="content">
-                    <p>I am a Computer Science student with experience in Data Engineering, using technologies such as PySpark, AWS Glue, and QuickSight. Recently, I obtained the AWS Cloud Practitioner certification, which strengthened my knowledge of cloud solutions. I am seeking opportunities to apply and expand my technical skills.</p>
-                </div>
-            </section>
+		<main class="wrapper about">
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I am a Computer Science student with experience in Data Engineering, Full Stack Development, and working in AWS cloud environments.
+						I hold the AWS Cloud Practitioner certification, which reinforces my knowledge of cloud computing solutions.
+						I am seeking opportunities to apply and further develop my technical skills in software and data solution development.
+					</p>
 
-            <section>
-                <h2 class="section-title">Education</h2>
-                <div class="content">
-                    <p>High School Diploma: URI Erechim</p>
-                    <p>Undergraduate Studies in Progress: Computer Science – Integrated Regional University of Alto Uruguai and Missions</p>
-                </div>
-            </section>
+				</div>
+			</section>
 
-            <section>
-                <h2 class="section-title">Skills</h2>
-                <div class="content">
-                    <p>Java | JSF | Python | AWS Systems | Docker | Git | GitHub | SQL | Agile Methodologies – Scrum | AWS CLF-C02 Certified</p>
-                </div>
-            </section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>High School Diploma: URI Erechim</p>
+					<p>
+						Foreign Language Education: Upper-Intermediate English (B2) &nbsp; - &nbsp; URI Erechim Language Center
+					</p>
+					<p>
+						Undergraduate Studies in Progress: Computer Science &nbsp; - &nbsp; Universidade Regional Integrada do Alto Uruguai e das Missões (URI - Campus Erechim)
+					</p>
 
-            <section>
-                <h2 class="section-title">Completed Courses</h2>
-                <div class="content">
-                    <h5 class="local_curso">Udemy Courses:</h5>
-                    <p>
-                        Complete Introduction to Amazon QuickSight – Duration: 5.5 Hours<br>
-                        Docker for Developers (with Docker Swarm and Kubernetes) – Duration: 12 Hours<br>
-                        Git and GitHub from Basic to Advanced (with Gist and GitHub Pages) – Duration: 8.5 Hours<br>
-                        Spark Training with PySpark: The Complete Course – Duration: 11 Hours<br>
-                        Linux for Developers (with terminal, Shell, Apache, and more) – Duration: 7.5 Hours<br>
-                        Agile Methods from A to Z: The Complete Course – Duration: 9.5 Hours<br>
-                        Python 3 – Complete Course from Beginner to Advanced – Duration: 26 Hours<br>
-                        SQL for Data Analysis: From Beginner to Advanced – Duration: 6 Hours
-                    </p>
-                    <br>
-                    <h5 class="local_curso">AWS Skill Builder Courses:</h5>
-                    <p>
-                        Amazon EMR Getting Started<br>
-                        Amazon QuickSight Getting Started<br>
-                        AWS Glue Getting Started<br>
-                        Cloud Economics<br>
-                        Best Practices for Data Warehousing with Amazon Redshift<br>
-                        Technical Accreditation<br>
-                        AWS Analytics Fundamentals<br>
-                        Introduction to Amazon Athena<br>
-                        AWS Analytics Basics<br>
-                        Sales Accreditation (Business)<br>
-                        Serverless Analytics<br>
-                        Technical Essentials
-                    </p>
-                    <br>
-                    <h5 class="local_curso">DIO:</h5>
-                    <p>GFT Start #6 – Programming Logic – Duration: 47 Hours</p>
-                </div>
-            </section>
+				</div>
+			</section>
 
-        </main>
-    </div>
+			<section>
+				<h2 class="section-title">Professional Experience</h2>
+				<div class="content">
+					<p>
+						Data Engineering and Data Analysis Intern – Compass UOL (04/08/2024 – 09/04/2024)<br>
+						Worked on ETL processes, data modeling, and data analysis using Python, PySpark, and AWS services.
+					</p>
+					<p>
+						Full Stack Web Developer – System Sistemas de Gestão (02/10/2025 – Present)<br>
+						Development and maintenance of ERP systems, including API integration and consumption, using Java, JSF, Payara Server, and Firebird SQL.
+					</p>
+				</div>
+			</section>
 
-	<h2 class="section-title" style="margin-left: 2rem; margin-top: 2rem;">Certificates</h2>
-		<div class="gallery">
-			<img id="thumb1" class="thumbnail-special" data-pdf-src="/assets/Certificates/AWS_Certified_Cloud_Practitioner_certificate.pdf" />
-			<img id="thumb26" class="thumbnail-special" data-pdf-src="/assets/Certificates/Rafael_Gustavo_Kammler.pdf" />
-			<img id="thumb2" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_QuickSight.pdf" />
-			<img id="thumb3" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Docker.pdf" />
-			<img id="thumb27" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Pyspakr.pdf" />
-			<img id="thumb4" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Git.pdf" />
-			<img id="thumb5" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_linux.pdf" />
-			<img id="thumb6" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Métodos_agéis.pdf" />
-			<img id="thumb7" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_python.pdf" />
-			<img id="thumb8" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_SQL.pdf" />
-			<img id="thumb10" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_1.pdf" />
-			<img id="thumb11" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_2.pdf" />
-			<img id="thumb12" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_3.pdf" />
-			<img id="thumb13" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_4.pdf" />
-			<img id="thumb14" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_5.pdf" />
-			<img id="thumb15" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_6.pdf" />
-			<img id="thumb16" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_7.pdf" />
-			<img id="thumb17" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_8.pdf" />
-			<img id="thumb18" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_9.pdf" />
-			<img id="thumb19" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_10.pdf" />
-			<img id="thumb20" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_11.pdf" />
-			<img id="thumb21" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_12.pdf" />
-			<img id="thumb22" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_13.pdf" />
-			<img id="thumb23" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_14.pdf" />
-			<img id="thumb24" class="thumbnail-bradesco" data-pdf-src="/assets/Certificates/Escola Virtual - Fundação Bradesco - Python Introdutório.pdf" />
-			<img id="thumb25" class="thumbnail-bradesco" data-pdf-src="/assets/Certificates/Escola Virtual - Fundação Bradesco - Introdução POO.pdf" />
-			<img id="thumb28" class="thumbnail-dio" data-pdf-src="/assets/Certificates/Certificado_BootCamp_logica_programação_DIO.pdf" />
+			<section>
+				<h2 class="section-title">Hard Skills</h2>
+				<div class="content">
+					<p>Java | JSF | Full Stack | Python | AWS Services | Docker | Git | GitHub | SQL | Agile Methodologies
+						- Scrum | AWS CLF-C02 Certification | REST APIs</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Soft Skills</h2>
+				<div class="content">
+					<p>Teamwork | Proactivity | Organization | Problem Solving | Fast Learning Ability</p>
+				</div>
+			</section>
+
+
+			<section>
+				<h2 class="section-title">Academic Activities</h2>
+				<div class="content">
+					<p>
+						Participation in the IX Seminário de Projetos Integradores <br>
+						Participation in the X Seminário de Projetos Integradores <a
+						href="https://github.com/RafaKammler/EXT-Criptografia-RSA-PI2" target="_blank"
+						rel="noopener noreferrer">(Project)</a> <br>
+						Participation in the XII Seminário de Projetos Integradores <a
+						href="https://github.com/th-markendorf/Simulador-de-Processador-RISC-V" target="_blank"
+						rel="noopener noreferrer">(Project)</a><br>
+						Participation in the XXV Semana Acadêmica do Curso de Ciência da Computação <br>
+						1st Place at the Code & Conquer: Criatividade em Computação event <a
+						href="https://github.com/felipeJulhao/StoneMatch" target="_blank"
+						rel="noopener noreferrer">(Project)</a>
+						<br>
+					</p>
+				</div>
+			</section>
+
+
+			<section>
+				<h2 class="section-title">Completed Courses</h2>
+				<div class="content">
+					<h5 class="local_curso">Udemy Courses:</h5>
+					<p>
+						Complete Introduction to Amazon QuickSight – Duration: 5.5 Hours<br>
+						Docker para Desenvolvedores (with Docker Swarm and Kubernetes) – Duration: 12 Hours<br>
+						Git e GitHub do básico ao avançado (with Gist and GitHub Pages) – Duration: 8.5 Hours<br>
+						Formação Spark com PySpark: o Curso Completo – Duration: 11 Hours<br>
+						Linux para Desenvolvedores (with terminal, Shell, Apache, and more) – Duration: 7.5 Hours<br>
+						Métodos Ágeis de A a Z: o curso completo – Duration: 9.5 Hours<br>
+						Python 3 – Curso Completo do Básico ao Avançado – Duration: 26 Hours<br>
+						SQL para Análise de Dados: Do básico ao avançado – Duration: 6 Hours
+					</p>
+					<br>
+					<h5 class="local_curso">AWS Skill Builder Courses:</h5>
+					<p>
+						Amazon EMR Getting Started<br>
+						Amazon QuickSight Getting Started<br>
+						AWS Glue Getting Started<br>
+						Economic Aspects of the Cloud<br>
+						Best Practices for Data Warehousing with Amazon Redshift<br>
+						Credenciamento (Technical)<br>
+						Fundamentos de Analytics na AWS<br>
+						Introduction to Amazon Athena<br>
+						Noções Básicas de Analytics na AWS<br>
+						Sales Accreditation (Business)<br>
+						Serverless Analytics<br>
+						Technical Essentials
+					</p>
+					<br>
+					<h5 class="local_curso">DIO:</h5>
+					<p>
+						GFT Start #6 – Lógica de Programação – Duration: 47 Hours
+					</p>
+				</div>
+			</section>
+
+
+		</main>
+	</div>
+
+	<h2 class="section-title" style="margin-left: 2rem; margin-top: 2rem;">Certificados</h2>
+	<div class="gallery">
+		<img id="thumb1" class="thumbnail-special" data-pdf-src="/assets/Certificates/AWS_Certified_Cloud_Practitioner_certificate.pdf" />
+		<img id="thumb26" class="thumbnail-special" data-pdf-src="/assets/Certificates/Rafael_Gustavo_Kammler.pdf" />
+		<img id="thumb29" class="thumbnail-special" data-pdf-src="/assets/Certificates/CertificadoInglesAvancado.pdf"/>
+		<img id="thumb2" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_QuickSight.pdf" />
+		<img id="thumb3" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Docker.pdf" />
+		<img id="thumb27" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Pyspakr.pdf" />
+		<img id="thumb4" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Git.pdf" />
+		<img id="thumb5" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_linux.pdf" />
+		<img id="thumb6" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_Métodos_agéis.pdf" />
+		<img id="thumb7" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_python.pdf" />
+		<img id="thumb8" class="thumbnail-udemy" data-pdf-src="/assets/Certificates/Certificado_SQL.pdf" />
+		<img id="thumb10" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_1.pdf" />
+		<img id="thumb11" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_2.pdf" />
+		<img id="thumb12" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_3.pdf" />
+		<img id="thumb13" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_4.pdf" />
+		<img id="thumb14" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_5.pdf" />
+		<img id="thumb15" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_6.pdf" />
+		<img id="thumb16" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_7.pdf" />
+		<img id="thumb17" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_8.pdf" />
+		<img id="thumb18" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_9.pdf" />
+		<img id="thumb19" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_10.pdf" />
+		<img id="thumb20" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_11.pdf" />
+		<img id="thumb21" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_12.pdf" />
+		<img id="thumb22" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_13.pdf" />
+		<img id="thumb23" class="thumbnail-aws" data-pdf-src="/assets/Certificates/Certificado_AWS_14.pdf" />
+		<img id="thumb24" class="thumbnail-bradesco" data-pdf-src="/assets/Certificates/Escola Virtual - Fundação Bradesco - Python Introdutório.pdf" />
+		<img id="thumb25" class="thumbnail-bradesco" data-pdf-src="/assets/Certificates/Escola Virtual-Fundação Bradesco-Introdução POO.pdf" />
+		<img id="thumb28" class="thumbnail-dio" data-pdf-src="/assets/Certificates/Certificado_BootCamp_logica_programacao_DIO.pdf"/>
+		<img id="thumb30" class="thumbnail-URI" data-pdf-src="/assets/Certificates/CodeConquer.pdf"/>
+		<img id="thumb31" class="thumbnail-URI" data-pdf-src="/assets/Certificates/PiIXArduino.pdf"/>
+		<img id="thumb32" class="thumbnail-URI" data-pdf-src="/assets/Certificates/PiXRsa.pdf"/>
+		<img id="thumb33" class="thumbnail-URI" data-pdf-src="/assets/Certificates/XXVSemanaAcademica.pdf"/>
+	</div>
+
+
+	<div id="pdfModal" class="modal">
+		<div class="modal-content">
+			<span id="closeButton" class="close"><Icon icon="x-circle"></Icon></span>
+			<iframe id="pdfViewer" src="" width="80%" height="100%"></iframe>
 		</div>
+	</div>
+
+	<div class="stack" style="width: 100%; margin-top: 1rem;">
+		<ContactCTA/>
+	</div>
 
 
-		<div id="pdfModal" class="modal">
-			<div class="modal-content">
-				<span id="closeButton" class="close"><Icon icon="x-circle"></Icon></span>
-				<iframe id="pdfViewer" src="" width="80%" height="100%"></iframe>
-			</div>
-		</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js" defer></script>
 
-		<div class="stack" style="width: 100%; margin-top: 1rem;">
-			<ContactCTA />
-		</div>
+	<script>
+		const imgElements = document.querySelectorAll(
+			'.thumbnail-special, .thumbnail-udemy, .thumbnail-aws, .thumbnail-bradesco, .thumbnail-dio, .thumbnail-URI'
+			);
 
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js" defer></script>
-
-		<script>
-			// Get the img elements
-			const imgElements = document.querySelectorAll('.thumbnail-special, .thumbnail-udemy, .thumbnail-aws, .thumbnail-bradesco');
-
-			// Add an event listener to each img element
-			imgElements.forEach((img) => {
-				img.addEventListener('click', (event) => {
-					const target = event.target;
-					openPDFInModal(target.getAttribute('data-pdf-src'));
+			imgElements.forEach((el) => {
+				el.addEventListener('click', (event) => {
+					const target = event.currentTarget; // the element the listener is attached to
+					if (!(target instanceof Element)) return;
+					const pdfSrc = target.getAttribute('data-pdf-src');
+					if (!pdfSrc) return;
+					openPDFInModal(pdfSrc);
+					});
 				});
-			});
 
-			// Function to open the modal with the PDF
 			function openPDFInModal(pdfSrc) {
 				try {
 					const modal = document.getElementById('pdfModal');
 					const iframe = document.getElementById('pdfViewer');
+					if (!modal || !(iframe instanceof HTMLIFrameElement)) return;
 					iframe.src = pdfSrc;
 					modal.style.display = "block";
-				} catch (error) {
+					} catch (error) {
 					console.error('Error opening PDF:', error);
+					}
 				}
-			}
 
-			// Function to close the modal
 			function closeModal() {
 				const modal = document.getElementById('pdfModal');
 				modal.style.display = "none";
-			}
+				}
 
 			document.addEventListener('DOMContentLoaded', () => {
+				// Access pdfjsLib from the global window (loaded from CDN)
+				const pdfjsLib = window.pdfjsLib || window['pdfjsLib'];
+				if (!pdfjsLib) {
+					console.error('pdfjsLib not found. Make sure the CDN script is loaded before this script.');
+					return;
+					}
+
 				pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
 
 				async function generateThumbnail(pdfUrl, imgId) {
 					try {
-						const loadingTask = pdfjsLib.getDocument(pdfUrl);
+						const safeUrl = encodeURI(pdfUrl); // encode spaces and special chars
+						const loadingTask = pdfjsLib.getDocument(safeUrl);
 						const pdf = await loadingTask.promise;
 						const page = await pdf.getPage(1);
 						const scale = 1;
@@ -171,21 +244,31 @@ import Icon from "../../components/Icon.astro";
 						const renderContext = {
 							canvasContext: context,
 							viewport: viewport
-						};
+							};
 
 						await page.render(renderContext).promise;
 
-						const img = document.getElementById(imgId);
-						img.src = canvas.toDataURL();
-					} catch (err) {
-						console.error('Error generating thumbnail:', err);
+						const imgEl = document.getElementById(imgId);
+						if (imgEl instanceof HTMLImageElement) {
+							imgEl.src = canvas.toDataURL();
+							}
+						} catch (err) {
+						console.error('Error generating thumbnail for', imgId, err);
+						}
 					}
-				}
 
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape') {
+						const modal = document.getElementById('pdfModal');
+						if (modal && modal.style.display === 'block') {
+							closeModal();
+							}
+						}
+					});
 				const closeButton = document.getElementById('closeButton');
 				if (closeButton) {
 					closeButton.addEventListener('click', closeModal);
-				}
+					}
 
 				generateThumbnail('/assets/Certificates/AWS_Certified_Cloud_Practitioner_certificate.pdf', 'thumb1');
 				generateThumbnail('/assets/Certificates/Rafael_Gustavo_Kammler.pdf', 'thumb26');
@@ -214,224 +297,12 @@ import Icon from "../../components/Icon.astro";
 				generateThumbnail('/assets/Certificates/Escola Virtual - Fundação Bradesco - Python Introdutório.pdf', 'thumb24');
 				generateThumbnail('/assets/Certificates/Escola Virtual-Fundação Bradesco-Introdução POO.pdf', 'thumb25');
 				generateThumbnail('/assets/Certificates/Certificado_BootCamp_logica_programacao_DIO.pdf', 'thumb28');
-			});
+				generateThumbnail('/assets/Certificates/CertificadoInglesAvancado.pdf', 'thumb29');
+				generateThumbnail('/assets/Certificates/CodeConquer.pdf', 'thumb30');
+				generateThumbnail('/assets/Certificates/PiIXArduino.pdf', 'thumb31');
+				generateThumbnail('/assets/Certificates/PiXRsa.pdf', 'thumb32');
+				generateThumbnail('/assets/Certificates/XXVSemanaAcademica.pdf', 'thumb33');
+				});
 
-		</script>
-
-
+	</script>
 </BaseLayout>
-
-
-<style>
-	.modal {
-		display: none;
-		position: fixed;
-		z-index: 1000;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-
-	.gallery img {
-		cursor: pointer;
-		width: 7.5rem;
-		flex-grow: 0;
-		height: 7.5rem;
-		justify-content: flex-start;
-	}
-
-	iframe {
-		width: 100%;
-		height: 100%;
-		border: none;
-	}
-
-
-	.gallery {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		justify-content: flex-start;
-		margin: 3rem 2rem;
-		gap: 1.5rem;
-	}
-
-	.thumbnail-special {
-		width: 7.5rem;
-		height: 7.5rem;
-		object-fit: cover;
-		cursor: pointer;
-		border: 0.1rem solid gold;
-		box-shadow: 0 0 0.5rem gold, 0 0 1rem gold, 0 0 1.5rem gold;
-		animation: shiny-border-golden 2s infinite;
-	}
-
-	@keyframes shiny-border-golden {
-		0% {
-			box-shadow: 0 0 0.5rem gold, 0 0 1rem gold, 0 0 1.5rem gold;
-		}
-		50% {
-			box-shadow: 0 0 1rem gold, 0 0 1.5rem gold, 0 0 2rem gold;
-		}
-		100% {
-			box-shadow: 0 0 0.5rem gold, 0 0 1rem gold, 0 0 1.5rem gold;
-		}
-	}
-	.thumbnail-udemy {
-		width: 7.5rem;
-		align-content: flex-start;
-		height: 7.5rem;
-		object-fit: cover;
-		cursor: pointer;
-		border: 0.1rem solid rebeccapurple;
-		box-shadow: 0 0 0.25rem rebeccapurple, 0 0 0.5rem rebeccapurple, 0 0 0.75rem rebeccapurple;
-	}
-
-
-
-
-	.thumbnail-aws {
-		width: 7.5rem;
-		align-content: flex-start;
-		height: 7.5rem;
-		object-fit: cover;
-		cursor: pointer;
-		border: 0.1rem solid darkorange;
-		box-shadow: 0 0 0.25rem darkorange, 0 0 0.5rem darkorange, 0 0 0.75rem darkorange;
-
-	}
-
-
-	.thumbnail-bradesco {
-		width: 7.5rem;
-		align-content: flex-start;
-		height: 7.5rem;
-		object-fit: cover;
-		cursor: pointer;
-		border: 0.1rem solid darkred;
-		box-shadow: 0 0 0.25rem darkred, 0 0 0.5rem darkred, 0 0 0.75rem darkred;
-
-	}
-	.thumbnail-dio {
-		width: 7.5rem;
-		align-content: flex-start;
-		height: 7.5rem;
-		object-fit: cover;
-		cursor: pointer;
-		border: 0.1rem solid mediumblue;
-		box-shadow: 0 0 0.25rem mediumblue, 0 0 0.5rem mediumblue, 0 0 0.75rem mediumblue;
-
-	}
-
-
-
-	.modal {
-		display: none;
-		position: fixed;
-		z-index: 1;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-
-	.modal-content {
-		height:80%;
-		width:80%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.close {
-		position: absolute;
-		top: -10px;
-		right: -33px;
-		color: #fff;
-		font-weight: bold;
-		cursor: pointer;
-		background: none;
-		font-size: 2rem;
-	}
-
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.local_curso {
-		grid-column-start: 1;
-		font-size: 1.3rem;
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
-
-	@media (max-width: 50em) {
-		.gallery {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-
-		.gallery img {
-			flex: 1 1 calc(33.333% - 1rem);
-			margin-bottom: 1rem;
-		}
-	}
-</style>
